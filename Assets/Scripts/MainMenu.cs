@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public GameObject GraphicsSubmenuUI;
     public GameObject ControlsSubemnuUI;
     public GameObject ConfirmationSubmenuUI;
+    public GameObject CreditsSubmenuUI;
 
     public void StartGame()
     {
@@ -23,27 +24,9 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Loading scene index 1");
     }
 
-    public void LevelSelect()
-    {
-        //Trenutno ne postoji
-        Debug.Log("Opening Level Select");
-    }
-
-    public void LoadOptions()
-    {
-        //Trenutno ne postoji
-        Debug.Log("Opening options");
-    }
-
-    public void LoadCredits()
-    {
-        //Trenutno ne postiji
-        Debug.Log("Opening Credits");
-    }
-
     public void QuitGame()
     {
-        //Radi samo kada je buildano
+        //Works only when built
         Application.Quit();
         Debug.Log("Quitting");
     }
@@ -54,5 +37,6 @@ public class MainMenu : MonoBehaviour
         GraphicsSubmenuUI.SetActive(false);
         ControlsSubemnuUI.SetActive(false);
         ConfirmationSubmenuUI.SetActive(false);
+        CreditsSubmenuUI.SetActive(false);
     }
 }
