@@ -341,7 +341,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THIS IS Main meNU
+  m_text: 'THIS IS Main meNU
+
+    Saki smrdi'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d440cad2fe0ba6c42b5be7333a458068, type: 2}
   m_sharedMaterial: {fileID: -6949101736455709437, guid: d440cad2fe0ba6c42b5be7333a458068, type: 2}
