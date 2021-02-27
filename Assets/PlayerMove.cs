@@ -8,17 +8,26 @@ public class PlayerMove : MonoBehaviour
     public Transform Camera;
     public float playerSpeed = 5f;
     public float sprint = 8f;
-    public float jumpHeight = 300f;
+    // public float crouch = 2.5f;
+    public float jumpHeight = 1f;
     public float gravity = -19.62f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public Transform head;
+    
     Vector3 velocity;
     bool isGrounded;
+    // bool isCrouching;
 
-    // Update is called once per frame
+    void Start()
+    {
+        controller = gameObject.GetComponent<CharacterController>();
+    }
+
     void Update()
     {
+        Camera.transform.localPosition = new Vector3(0f,-0.7919f,0f);
         float currentSpeed = playerSpeed;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);  // Checks if the player is on the ground
 
@@ -29,6 +38,15 @@ public class PlayerMove : MonoBehaviour
         float x = Input.GetAxis("Horizontal"); //Input for forwards and backwards (w and s)
         float z = Input.GetAxis("Vertical"); //Input for left and right (a and d)
         
+        // Crouch
+        // if (Input.GetKey("left ctrl") || Input.GetKey("c") && isGrounded){ // press C or ctrl to crouch
+        //     currentSpeed = crouch; // slow down when crouching
+        //     controller.height = 1f;
+        //     Camera.transform.position += new Vector3(0f, 0.35f, 0f);
+        // }
+        // else{
+        //     controller.height = 1.7f;
+        // }
         // Sprint
         if (Input.GetKey(KeyCode.LeftShift) && !Input.GetKey("s") && !Input.GetKey("a") && !Input.GetKey("d")){
             currentSpeed = sprint;               
@@ -45,6 +63,6 @@ public class PlayerMove : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime; //Creates a vector with direction of gravity
         controller.Move(velocity * Time.deltaTime);
-        print(currentSpeed);
+
     }   
 }
