@@ -14,6 +14,14 @@ public class MainMenu : MonoBehaviour
     public GameObject ConfirmationSubmenuUI;
     public GameObject CreditsSubmenuUI;
 
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseAllMenusMain();
+        }
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -30,8 +38,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Quitting");
     }
-    private void CloseAllMenus()
+    private void CloseAllMenusMain()
     {
+        MainMenuUI.SetActive(true);
         OptionsMenuUI.SetActive(false);
         AudioSubmenuUI.SetActive(false);
         GraphicsSubmenuUI.SetActive(false);
