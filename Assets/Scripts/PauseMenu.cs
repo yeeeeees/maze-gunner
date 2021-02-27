@@ -54,8 +54,9 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         PauseMenuUI.SetActive(false);
-        Scene scene = SceneManager.GetActiveScene(); 
-        SceneManager.LoadScene(scene.name);
+        // Scene scene = SceneManager.GetActiveScene(); 
+        // SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(2);
         Time.timeScale = 1f;
         Debug.Log("Restarting");
     }
@@ -66,6 +67,7 @@ public class PauseMenu : MonoBehaviour
         //Make sure you set the main menu scene as scene o in build index settings
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        Destroy(this.gameObject);
         Debug.Log("Loading Main Menu");
     }
 
