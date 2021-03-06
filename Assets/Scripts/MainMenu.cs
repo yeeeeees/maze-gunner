@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
     public GameObject ConfirmationSubmenuUI;
     public GameObject CreditsSubmenuUI;
 
+    void Start()
+    {
+        DestoryObjetsOnMainMenuLoad();
+    }
+
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -37,6 +42,14 @@ public class MainMenu : MonoBehaviour
         //Works only when built
         Application.Quit();
         Debug.Log("Quitting");
+    }
+
+    private void DestoryObjetsOnMainMenuLoad()
+    {
+        //Add here objects you want destoryed when the main menu loads
+        //Reeber to tag properly in editor
+        Destroy (GameObject.FindWithTag("Player"));
+        Destroy (GameObject.FindWithTag("PauseMenu"));
     }
     private void CloseAllMenusMain()
     {
