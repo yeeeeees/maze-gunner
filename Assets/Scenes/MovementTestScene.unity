@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 201991214}
-  Player: {fileID: 543450652705363708}
+  PlayerModel: {fileID: 543450652705363708}
   Camera: {fileID: 109323797}
   head: {fileID: 5901452234770613375}
   groundCheck: {fileID: 1958735743}
@@ -300,6 +300,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  animator: {fileID: 843071647}
 --- !u!1 &325087728
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +491,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &843071647 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7973943389141460304, guid: 9a782b26dc8fbf544966208a3fcbca9e, type: 3}
+  m_PrefabInstance: {fileID: 7973943388838348768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958735742
 GameObject:
   m_ObjectHideFlags: 0
