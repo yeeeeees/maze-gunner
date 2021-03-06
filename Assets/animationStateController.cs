@@ -26,8 +26,11 @@ public class animationStateController : MonoBehaviour
         bool isBackRight = animator.GetBool("isBackRight");
         bool isBackLeft = animator.GetBool("isBackLeft");
         bool isJumping = animator.GetBool("isJumping");
-        bool crouchTransition = animator.GetBool("crouchTransition");
         bool isCrouching = animator.GetBool("isCrouching");
+        bool isCrouchForward = animator.GetBool("isCrouchForward");
+        bool isCrouchBackwards = animator.GetBool("isCrouchBackwards");
+        bool isCrouchLeft = animator.GetBool("isCrouchLeft");
+        bool isCrouchRight = animator.GetBool("isCrouchRight");
         
         // Check for input
         bool forwardPressed = Input.GetKey("w"); 
@@ -36,8 +39,7 @@ public class animationStateController : MonoBehaviour
         bool rightPressed = Input.GetKey("d");
         bool sprintPressed = Input.GetKey(KeyCode.LeftShift);
         bool spacePressed = Input.GetKeyDown("space");
-        bool crouchPressed = Input.GetKeyDown(KeyCode.LeftControl);
-        bool crouchHeld = Input.GetKey(KeyCode.LeftControl);
+        bool crouchPressed = Input.GetKey(KeyCode.LeftControl);
 
 
         // Forward Jogging
@@ -104,7 +106,7 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isBackRight", false);
         }
 
-        // Diagonal Backwards Lefy
+        // Diagonal Backwards Left
         if (!isBackLeft && leftPressed && backPressed) {
             animator.SetBool("isBackLeft", true);
         }
@@ -120,21 +122,44 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isJumping", false);
         }
 
-        // Crouching Transition
-        if (!isCrouching && crouchPressed) {
-            animator.SetBool("crouchTransition", true);
-        }
-        if (isCrouching && !crouchPressed) {
-            animator.SetBool("crouchTransition", false);
-        }
-
         // Crouch
-        if (!isCrouching && crouchHeld) {
+        if (!isCrouching && crouchPressed) {
             animator.SetBool("isCrouching", true);
         }
-        if (isCrouching && !crouchHeld) {
+        if (isCrouching && !crouchPressed) {
             animator.SetBool("isCrouching", false);
         }
 
+        // Crouch Walk Forward
+        if (!isCrouchForward && crouchPressed && forwardPressed) {
+            animator.SetBool("isCrouchForward", true);
+        }
+        if (isCrouchForward && !crouchPressed || !forwardPressed) {
+            animator.SetBool("isCrouchForward", false);
+        }
+
+        // Crouch Walk Backwards
+        if (!isCrouchBackwards && crouchPressed && backPressed) {
+            animator.SetBool("isCrouchBackwards", true);
+        }
+        if (isCrouchBackwards && !crouchPressed || !backPressed) {
+            animator.SetBool("isCrouchBackwards", false);
+        }
+
+        // Crouch Walk Left
+        if (!isCrouchLeft && crouchPressed && leftPressed) {
+            animator.SetBool("isCrouchLeft", true);
+        }
+        if (isCrouchLeft && !crouchPressed || !leftPressed) {
+            animator.SetBool("isCrouchLeft", false);
+        }
+
+        // Crouch Walk Right
+        if (!isCrouchRight && crouchPressed && rightPressed) {
+            animator.SetBool("isCrouchRight", true);
+        }
+        if (isCrouchRight && !crouchPressed || !rightPressed) {
+            animator.SetBool("isCrouchRight", false);
+        }
     }
 }
