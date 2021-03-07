@@ -2507,7 +2507,7 @@ GameObject:
   - component: {fileID: 2602481621798091105}
   - component: {fileID: 2602481621798091134}
   - component: {fileID: 2602481621798091106}
-  - component: {fileID: 5084247556304521230}
+  - component: {fileID: 3874515863052695675}
   m_Layer: 5
   m_Name: Pause Menu Canvas
   m_TagString: Untagged
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   GraphicsSubmenuUI: {fileID: 2602481621992790684}
   ControlsSubmenuUI: {fileID: 2602481623124433814}
   ConfirmationSubenuUI: {fileID: 2602481622785074237}
---- !u!114 &5084247556304521230
+--- !u!114 &3874515863052695675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
