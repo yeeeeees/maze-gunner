@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
         controller.Move(moveDirection * currentSpeed * Time.deltaTime);
 
         // Jump
-        if (Input.GetKeyDown("space") && isGrounded && !isJumping) {
+        if (Input.GetKeyDown("space") && isGrounded && !isJumping && currentSpeed != crouch) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
 
