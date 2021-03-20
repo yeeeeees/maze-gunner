@@ -31,6 +31,7 @@ public class animationStateController : MonoBehaviour
         bool isCrouchBackwards = animator.GetBool("isCrouchBackwards");
         bool isCrouchLeft = animator.GetBool("isCrouchLeft");
         bool isCrouchRight = animator.GetBool("isCrouchRight");
+        bool isSlide = animator.GetBool("isSlide");
         
         // Check for input
         bool forwardPressed = Input.GetKey("w"); 
@@ -131,35 +132,44 @@ public class animationStateController : MonoBehaviour
         }
 
         // Crouch Walk Forward
-        if (!isCrouchForward && crouchPressed && forwardPressed) {
+        if (!isCrouchForward && isCrouching && forwardPressed) {
             animator.SetBool("isCrouchForward", true);
         }
-        if (isCrouchForward && !crouchPressed || !forwardPressed) {
+        if (isCrouchForward && !isCrouching || !forwardPressed) {
             animator.SetBool("isCrouchForward", false);
         }
 
         // Crouch Walk Backwards
-        if (!isCrouchBackwards && crouchPressed && backPressed) {
+        if (!isCrouchBackwards && isCrouching && backPressed) {
             animator.SetBool("isCrouchBackwards", true);
         }
-        if (isCrouchBackwards && !crouchPressed || !backPressed) {
+        if (isCrouchBackwards && !isCrouching || !backPressed) {
             animator.SetBool("isCrouchBackwards", false);
         }
 
         // Crouch Walk Left
-        if (!isCrouchLeft && crouchPressed && leftPressed) {
+        if (!isCrouchLeft && isCrouching && leftPressed) {
             animator.SetBool("isCrouchLeft", true);
         }
-        if (isCrouchLeft && !crouchPressed || !leftPressed) {
+        if (isCrouchLeft && !isCrouching || !leftPressed) {
             animator.SetBool("isCrouchLeft", false);
         }
 
         // Crouch Walk Right
-        if (!isCrouchRight && crouchPressed && rightPressed) {
+        if (!isCrouchRight && isCrouching && rightPressed) {
             animator.SetBool("isCrouchRight", true);
         }
-        if (isCrouchRight && !crouchPressed || !rightPressed) {
+        if (isCrouchRight && !isCrouching || !rightPressed) {
             animator.SetBool("isCrouchRight", false);
         }
+
+        // Slide
+        if (!isSlide && crouchPressed && sprintPressed) {
+            animator.SetBool("isSlide", true);
+        }
+        if (isSlide && !crouchPressed || !sprintPressed) {
+            animator.SetBool("isSlide", false);
+        }
+
     }
 }
