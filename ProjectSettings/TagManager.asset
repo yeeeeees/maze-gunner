@@ -5,17 +5,40 @@ TagManager:
   serializedVersion: 2
   tags:
   - PauseMenu
-  - PlayerUI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
+  - Roof
   - Ground
-  - Maze
-  - Player
-=======
-  - Gun
-  - Decals
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

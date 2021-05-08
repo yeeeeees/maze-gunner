@@ -54,9 +54,8 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         PauseMenuUI.SetActive(false);
-        // Scene scene = SceneManager.GetActiveScene(); 
-        // SceneManager.LoadScene(scene.name);
-        SceneManager.LoadScene(2); //This is for the purposes of testing out comented code above is the actual code 
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
         Time.timeScale = 1f;
         Debug.Log("Restarting");
     }
