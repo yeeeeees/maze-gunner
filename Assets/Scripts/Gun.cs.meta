@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b90b054f5c3086b7bba77232d74c4414
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - muzzleFlash: {fileID: 6094461937268742376, guid: 0eb70de21dce13038990c9714d35a548, type: 3}
+  - decal: {fileID: 2493743571624587299, guid: 831f6a00018f99221b0274333a56e232, type: 3}
+  - shootAnim: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
